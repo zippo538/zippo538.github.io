@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Mahindra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        
+      </div>
+      <div class="menu">
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#portfolio">Portfolio</a>
+        <a class="pill" href="#contact">Contact</a>
+        <button class="btn" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
+          Hire Me
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div class="hero-grid">
+        <div class="card hero-left">
+          <div class="kicker"><span class="dot"></span> Available for freelance & full-time</div>
+          <h1>AI/ML Fullstack Developer</h1>
+          <p class="sub">
+            Saya dapat membangun Machine Learning dan Artifial Intelegence Fullstack secara Vurnuleable dan Reability.
+          </p>
+          <div class="actions">
+            <button class="btn" onclick="document.querySelector('#portfolio').scrollIntoView({behavior:'smooth'})">Lihat Portfolio</button>
+            <a class="ghost" href="#contact">Kontak</a>
+          </div>
+
+          <div class="metrics">
+            <div class="metric"><b>20+</b><span>Project selesai</span></div>
+            <div class="metric"><b>2+ yrs</b><span>Pengalaman</span></div>
+            <div class="metric"><b>Fast | Research </b><span>Performance oriented</span></div>
+          </div>
+        </div>
+
+        <div class="card hero-right">
+          <div class="profile">
+            <div class="avatar">
+              <img src="img/aku.jpg" alt="Photo Mahindra Irvan Saputra">
+            </div>
+            <div>
+              <b>Mahindra Irvan Saputra</b><br/>
+              <small>Dibimbing AI Engineer and Machine Learning Batch 7</small>
+            </div>
+          </div>
+
+          <div class="skills">
+            <span class="tag">Python</span>
+            <span class="tag">Mysql</span>
+            <span class="tag">Haystack</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">ML/AI</span>
+            <span class="tag">API Integration</span>
+          </div>
+
+          <div style="margin-top:14px; color:var(--muted); font-size:14px">
+            <b style="color:var(--text)">Highlight:</b> Saya suka membuat automasi dengan rapi dan bersih.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="section-title">
+        <div>
+          <h2>Portfolio</h2>
+          <p>Klik card untuk lihat detail project</p>
+        </div>
+        <div style="color:var(--muted); font-size:13px">Terakhir update: <span id="lastUpdated"></span></div>
+      </div>
+
+      <div class="grid" id="projectGrid"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <div>
+          <h2>Contact</h2>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="card">
+          <h3 style="margin:0 0 8px">Kirim Pesan</h3>
+          <p style="margin:0 0 12px; color:var(--muted); font-size:14px">
+            Form ini hanya contoh. Kamu bisa hubungkan ke backend / layanan form (Formspree, Google Form, dsb).
+          </p>
+
+          <form onsubmit="return handleSubmit(event)">
+            <div class="field">
+              <label>Nama</label>
+              <input required placeholder="Nama kamu" />
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input required type="email" placeholder="email@domain.com" />
+            </div>
+            <div class="field">
+              <label>Pesan</label>
+              <textarea required placeholder="Ceritakan kebutuhan project kamu..."></textarea>
+            </div>
+            <button class="btn" type="submit">Kirim</button>
+          </form>
+        </div>
+
+        <div class="card" style="padding:18px">
+          <h3 style="margin:0 0 8px">Info</h3>
+          <p style="margin:0; color:var(--muted); font-size:14px">
+            Ganti dengan info kamu:
+          </p>
+          <div style="margin-top:12px; display:grid; gap:10px">
+            <div class="metric" style="margin:0">
+              <b>Email</b>
+              <span>mahindra.irvan538@gmail.com</span>
+            </div>
+            <div class="metric" style="margin:0">
+              <b>LinkedIn</b>
+              <span>Mahindra Irvan Saputra</span>
+            </div>
+            <div class="metric" style="margin:0">
+              <b>GitHub</b>
+              <span>githubzippo538</span>
+            </div>
+          </div>
+          <div class="links">
+            <a class="ghost" href="http://wa.me/08886900140" ">WhatsApp</a>
+            <a class="ghost" href="https://github.com/zippo538" >GitHub</a>
+            <a class="ghost" href="https://www.linkedin.com/in/mahindra-irvan-saputra-7925941aa/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Mahindra — Built with HTML/CSS/JS.
+    </footer>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Project detail">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <b id="mTitle">Judul</b><br/>
+          <small id="mSubtitle" style="color:var(--muted)">Kategori</small>
+        </div>
+        <button class="x" onclick="closeModal()" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-thumb" id="mThumb"></div>
+          <div>
+            <p id="mDesc" style="margin-top:0; color:var(--muted)"></p>
+
+            <div style="margin-top:10px">
+              <b>Tech Stack</b>
+              <div id="mStacks" class="meta"></div>
+            </div>
+
+            <div class="links">
+              <a class="btn" id="mLive" href="#" target="_blank" rel="noopener">Live Demo</a>
+              <a class="ghost" id="mRepo" href="#" target="_blank" rel="noopener">Source Code</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const projects = [
+      {
+        title: "ChatBot Filter Negative Word💬 (Study Case : Narendra Modi)",
+        category: "AI/ML | NLP ",
+        desc: "Membuat ChatBot Filter Negative Word untuk memfilter kata-kata negatif",
+        image : "img/aku.jpg",
+        stacks: ["CHAT LLM", "FASTAPI", "DOCKER","STREAMLIT"],
+        repo: "https://github.com/zippo538/final_project"
+      },
+      {
+        title: "New York House Price Prediction🏠",
+        category: "AI/ML",
+        desc: "Memprediksi Harga Rumah di New York secara interaktif menggunakan Streamlit",
+        image : "img/aku.jpg",
+        live : "https://www.linkedin.com/feed/update/urn:li:activity:7390809735198855169/?originTrackingId=6ashHSNFb5s%2FvP30GfFkDg%3D%3D",
+        stacks: ["ML/AI", "FAST API", "DOCKER", "STREAMLIT"],
+        repo: "https://github.com/zippo538/MlopsMahindraDay2"
+      },
+      {
+        title: "RAG-LLM-AI-SEJARAH-INDONESIA-MODERN📚",
+        category: "AI/ML",
+        desc: "Implementasi RAG (Retrieval-Augmented Generation) pada sejarah Indonesia Modern",
+        stacks: ["Langchain", "Qdrant", "Jupyter Notebook"],
+        image: "img/aku.jpg",
+        repo: "https://github.com/zippo538/RAG-LLM-AI-SEJARAH-INDONESIA-MODERN"
+      },
+      {
+        title: "MyCuan💵",
+        category: "Website",
+        desc: "Membuat website untuk credit Peer to Peer menggunakan Stack Laravel dan Filament",
+        stacks: ["Laravel", "Filament", "Mysql"],
+        image : "img/aku.jpg",
+        repo: "https://github.com/FinPro-ITPerbankan2023/FinPro-MyCuan"
+      },
+      {
+        title: "YOLO Detection Car",
+        category: "Computer Vision",
+        desc: "Membuat deteksi mobil menggunakan Framework YOLO",
+        stacks: ["YOLO", "Python", "Jupyter Notebook"],
+        image : "img/5.png",
+        live : "img/detection_car.mp4",
+        repo: "https://github.com/FinPro-ITPerbankan2023/FinPro-MyCuan"
+      },
+    ];
+
+    const grid = document.getElementById("projectGrid");
+    const modal = document.getElementById("modal");
+
+    function renderProjects(){
+      grid.innerHTML = "";
+      projects.forEach((p, idx) => {
+        const el = document.createElement("div");
+        el.className = "project";
+        el.tabIndex = 0;
+        el.innerHTML = `
+          <div class="thumb">
+            <span class="badge">${p.category}</span>
+            <img src="${p.image}" alt="${p.title}">
+          </div>
+          <h3>${p.title}</h3>
+          <p>${p.desc}</p>
+          <div class="meta">
+            ${p.stacks.slice(0,3).map(s => `<span class="chip">${s}</span>`).join("")}
+          </div>
+        `;
+        el.addEventListener("click", () => openModal(p));
+        el.addEventListener("keydown", (e) => { if(e.key === "Enter") openModal(p); });
+        grid.appendChild(el);
+      });
+    }
+
+    function openModal(p){
+      document.getElementById("mTitle").textContent = p.title;
+      document.getElementById("mSubtitle").textContent = p.category;
+      document.getElementById("mDesc").textContent = p.desc;
+
+      const thumb_img = document.getElementById("mThumb")
+      thumb_img.innerHTML= `<img src="${p.image}" alt="${p.title}">`;
+
+      const stacks = document.getElementById("mStacks");
+      stacks.innerHTML = p.stacks.map(s => `<span class="chip">${s}</span>`).join("");
+
+      const live = document.getElementById("mLive");
+      const repo = document.getElementById("mRepo");
+      live.href = p.live || "#";
+      repo.href = p.repo || "#";
+      live.style.display = p.live ? "inline-flex" : "none";
+      repo.style.display = p.repo ? "inline-flex" : "none";
+
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(){
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    modal.addEventListener("click", (e) => {
+      if(e.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && modal.classList.contains("show")) closeModal();
+    });
+
+    function handleSubmit(e){
+      e.preventDefault();
+      alert("Pesan terkirim (demo). Hubungkan form ini ke backend / layanan form ya!");
+      e.target.reset();
+      return false;
+    }
+
+    // Footer and update
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("lastUpdated").textContent = new Date().toLocaleDateString("id-ID", {year:'numeric', month:'long', day:'numeric'});
+    renderProjects();
+  </script>
+</body>
+</html>
