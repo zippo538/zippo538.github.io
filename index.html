@@ -1,311 +1,130 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio Mahindra</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portofolio Mahindra Irvan Saputra, Software Engineer dan Full-Stack Developer dengan fokus pada C#, .NET, React, serta AI/ML.">
+  <meta name="theme-color" content="#07111f">
+  <meta property="og:title" content="Mahindra Irvan Saputra | Software Engineer">
+  <meta property="og:description" content="Portofolio full-stack development, backend engineering, serta AI/ML.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zippo538.github.io/">
+  <link rel="canonical" href="https://zippo538.github.io/">
+  <title>Mahindra Irvan Saputra | Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: '#07111f', panel: '#0d1a2d', line: '#20344f', cyan: '#43e8d8', violet: '#8c7cff' },
+          boxShadow: { glow: '0 20px 60px rgba(67, 232, 216, 0.12)' }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body>
-  <!-- NAV -->
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="brand">
-        
-      </div>
-      <div class="menu">
-        <a class="pill" href="#about">About</a>
-        <a class="pill" href="#portfolio">Portfolio</a>
-        <a class="pill" href="#contact">Contact</a>
-        <button class="btn" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
-          Hire Me
-        </button>
-      </div>
-    </div>
+<body class="min-h-screen overflow-x-hidden bg-ink text-slate-100 antialiased selection:bg-cyan/30">
+  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-violet/20 blur-3xl"></div>
+    <div class="absolute right-[-8rem] top-48 h-96 w-96 rounded-full bg-cyan/10 blur-3xl"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.025)_1px,transparent_1px)] bg-[size:48px_48px]"></div>
   </div>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero" id="about">
-      <div class="hero-grid">
-        <div class="card hero-left">
-          <div class="kicker"><span class="dot"></span> Available for freelance & full-time</div>
-          <h1>AI/ML Fullstack Developer</h1>
-          <p class="sub">
-            Saya dapat membangun Machine Learning dan Artifial Intelegence Fullstack secara Modular.
-          </p>
-          <div class="actions">
-            <button class="btn" onclick="document.querySelector('#portfolio').scrollIntoView({behavior:'smooth'})">Lihat Portfolio</button>
-            <a class="ghost" href="#contact">Kontak</a>
-          </div>
-
-          <div class="metrics">
-            <div class="metric"><b>20+</b><span>Project selesai</span></div>
-            <div class="metric"><b>2+ yrs</b><span>Pengalaman</span></div>
-            <div class="metric"><b>Fast | Research </b><span>Performance oriented</span></div>
-          </div>
-        </div>
-
-        <div class="card hero-right">
-          <div class="profile">
-            <div class="avatar">
-              <img src="img/aku.jpg" alt="Photo Mahindra Irvan Saputra">
-            </div>
-            <div>
-              <b>Mahindra Irvan Saputra</b><br/>
-              <small>Dibimbing AI Engineer and Machine Learning Batch 7</small>
-            </div>
-          </div>
-
-          <div class="skills">
-            <span class="tag">Python</span>
-            <span class="tag">Mysql</span>
-            <span class="tag">Haystack</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">ML/AI</span>
-            <span class="tag">API Integration</span>
-          </div>
-
-          <div style="margin-top:14px; color:var(--muted); font-size:14px">
-            <b style="color:var(--text)">Highlight:</b> Saya suka membuat automasi dengan rapi dan bersih.
-          </div>
-        </div>
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-ink/80 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Navigasi utama">
+      <a href="#about" class="flex items-center gap-3 font-semibold tracking-wide">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-violet to-cyan font-black text-ink">MI</span>
+        <span class="hidden sm:inline">Mahindra Irvan Saputra</span>
+      </a>
+      <div class="flex items-center gap-2 text-sm">
+        <a class="hidden rounded-full px-4 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white sm:block" href="#about">Tentang</a>
+        <a class="rounded-full px-4 py-2 text-slate-300 transition hover:bg-white/5 hover:text-white" href="#portfolio">Proyek</a>
+        <a class="rounded-full bg-gradient-to-r from-violet to-cyan px-4 py-2 font-bold text-ink transition hover:-translate-y-0.5" href="#contact">Hubungi Saya</a>
       </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-5 lg:px-8">
+    <section id="about" class="grid min-h-[calc(100vh-73px)] items-center gap-10 py-16 lg:grid-cols-[1.25fr_.75fr] lg:py-24">
+      <div>
+        <p class="mb-3 font-semibold uppercase tracking-[0.24em] text-violet">Software Engineer</p>
+        <h1 class="max-w-4xl text-4xl font-black leading-tight sm:text-6xl">
+          Membangun aplikasi terukur dengan
+          <span class="bg-gradient-to-r from-violet to-cyan bg-clip-text text-transparent">.NET, React, dan ML/AI</span>
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+          Lulusan Teknik Komputer dengan pengalaman membangun aplikasi end-to-end menggunakan C#, .NET, React, Node.js, PostgreSQL, serta pengembangan Machine Learning dan Artificial Intelligence.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#portfolio" class="rounded-full bg-gradient-to-r from-violet to-cyan px-6 py-3 font-bold text-ink shadow-glow transition hover:-translate-y-1">Lihat Proyek</a>
+          <a href="cv-mahindra-irvan-saputra.pdf" target="_blank" rel="noopener" class="rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold transition hover:-translate-y-1 hover:border-cyan/50">Buka CV</a>
+        </div>
+        <dl class="mt-10 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/[.04] p-4"><dt class="text-xs uppercase tracking-widest text-slate-400">Proyek CV</dt><dd class="mt-1 text-2xl font-bold">5</dd></div>
+          <div class="rounded-2xl border border-white/10 bg-white/[.04] p-4"><dt class="text-xs uppercase tracking-widest text-slate-400">Program Bootcamp</dt><dd class="mt-1 text-2xl font-bold">3</dd></div>
+          <div class="col-span-2 rounded-2xl border border-white/10 bg-white/[.04] p-4 sm:col-span-1"><dt class="text-xs uppercase tracking-widest text-slate-400">Fokus</dt><dd class="mt-1 text-lg font-bold">Full-Stack .NET Development</dd></div>
+        </dl>
+      </div>
+
+      <aside class="rounded-[2rem] border border-white/10 bg-panel/80 p-6 shadow-2xl shadow-black/30 backdrop-blur">
+        <div class="flex items-center gap-4">
+          <img src="img/aku.jpg" alt="Foto Mahindra Irvan Saputra" class="h-20 w-20 rounded-3xl border border-white/10 object-cover">
+          <div><h2 class="text-xl font-bold">Mahindra Irvan Saputra</h2><p class="mt-1 text-sm text-slate-400">Batang, Jawa Tengah</p></div>
+        </div>
+        <div class="my-6 h-px bg-white/10"></div>
+        <p class="text-sm leading-7 text-slate-300">Software Engineer dengan fokus pada C#, .NET, React, PostgreSQL, dan AI/ML. Terbiasa membangun aplikasi modular dengan Clean Architecture dan RESTful API</p>
+        <div class="mt-6 flex flex-wrap gap-2" aria-label="Keahlian utama">
+          <span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">C#</span><span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">.NET</span><span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">React</span><span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">TypeScript</span><span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">PostgreSQL</span><span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Python</span><span class="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Docker</span>
+        </div>
+      </aside>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-      <div class="section-title">
-        <div>
-          <h2>Portfolio</h2>
-          <p>Klik card untuk lihat detail project</p>
-        </div>
-        <div style="color:var(--muted); font-size:13px">Terakhir update: <span id="lastUpdated"></span></div>
+    <section id="portfolio" class="scroll-mt-24 py-20">
+      <div class="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div><p class="font-semibold uppercase tracking-[0.24em] text-cyan">Selected work</p><h2 class="mt-2 text-3xl font-black sm:text-4xl">Proyek dari CV</h2><p class="mt-3 max-w-2xl text-slate-400">Lima proyek yang menunjukkan pengalaman saya dalam Full Stack development, Backend engineering, Machine Learning, AI Engineering,dan MLOps</p></div>
+        <p class="text-sm text-slate-500">Diperbarui <span id="lastUpdated"></span></p>
       </div>
-
-      <div class="grid" id="projectGrid"></div>
+      <div id="projectGrid" class="grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-title">
-        <div>
-          <h2>Contact</h2>
-        </div>
-      </div>
-
-      <div class="contact">
-        <div class="card">
-          <h3 style="margin:0 0 8px">Kirim Pesan</h3>
-        
-
-          <form onsubmit="return handleSubmit(event)">
-            <div class="field">
-              <label>Nama</label>
-              <input required placeholder="Nama kamu" />
+    <section id="contact" class="scroll-mt-24 py-20">
+      <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-panel to-[#101b36] p-6 shadow-2xl shadow-black/30 sm:p-10">
+        <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p class="font-semibold uppercase tracking-[0.24em] text-violet">Kontak</p><h2 class="mt-2 text-3xl font-black">Mari membangun sesuatu yang berguna.</h2><p class="mt-4 leading-7 text-slate-400">Terbuka untuk posisi Software Engineer, Full-Stack Developer, Backend Developer, serta proyek AI/ML.</p>
+            <div class="mt-7 space-y-3 text-sm">
+              <a class="block text-slate-300 transition hover:text-cyan" href="mailto:mahindra.irvan538@gmail.com">mahindra.irvan538@gmail.com</a>
+              <a class="block text-slate-300 transition hover:text-cyan" href="https://wa.me/62888690140" target="_blank" rel="noopener">+62 888 690 140</a>
+              <a class="block text-slate-300 transition hover:text-cyan" href="https://github.com/zippo538" target="_blank" rel="noopener">github.com/zippo538</a>
+              <a class="block text-slate-300 transition hover:text-cyan" href="https://www.linkedin.com/in/mahindra-irvan-saputra-7925941aa/" target="_blank" rel="noopener">LinkedIn Mahindra Irvan Saputra</a>
             </div>
-            <div class="field">
-              <label>Email</label>
-              <input required type="email" placeholder="email@domain.com" />
-            </div>
-            <div class="field">
-              <label>Pesan</label>
-              <textarea required placeholder="Ceritakan kebutuhan project kamu..."></textarea>
-            </div>
-            <button class="btn" type="submit">Kirim</button>
+          </div>
+          <form id="contactForm" class="grid gap-4" aria-label="Formulir kontak">
+            <label class="grid gap-2 text-sm text-slate-300">Nama<input id="contactName" required autocomplete="name" placeholder="Nama Anda" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan/60 focus:ring-4 focus:ring-cyan/10"></label>
+            <label class="grid gap-2 text-sm text-slate-300">Email<input id="contactEmail" required type="email" autocomplete="email" placeholder="email@domain.com" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan/60 focus:ring-4 focus:ring-cyan/10"></label>
+            <label class="grid gap-2 text-sm text-slate-300">Pesan<textarea id="contactMessage" required rows="5" placeholder="Ceritakan kebutuhan proyek atau peluang kerja Anda" class="resize-y rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition placeholder:text-slate-600 focus:border-cyan/60 focus:ring-4 focus:ring-cyan/10"></textarea></label>
+            <button class="justify-self-start rounded-full bg-gradient-to-r from-violet to-cyan px-6 py-3 font-bold text-ink transition hover:-translate-y-1" type="submit">Kirim melalui Email</button>
           </form>
         </div>
-
-        <div class="card" style="padding:18px">
-          <h3 style="margin:0 0 8px">Info</h3>
-          <p style="margin:0; color:var(--muted); font-size:14px">
-            Ganti dengan info kamu:
-          </p>
-          <div style="margin-top:12px; display:grid; gap:10px">
-            <div class="metric" style="margin:0">
-              <b>Email</b>
-              <span>mahindra.irvan538@gmail.com</span>
-            </div>
-            <div class="metric" style="margin:0">
-              <b>LinkedIn</b>
-              <span>Mahindra Irvan Saputra</span>
-            </div>
-            <div class="metric" style="margin:0">
-              <b>GitHub</b>
-              <span>githubzippo538</span>
-            </div>
-          </div>
-          <div class="links">
-            <a class="ghost" href="http://wa.me/08886900140" ">WhatsApp</a>
-            <a class="ghost" href="https://github.com/zippo538" >GitHub</a>
-            <a class="ghost" href="https://www.linkedin.com/in/mahindra-irvan-saputra-7925941aa/">LinkedIn</a>
-          </div>
-        </div>
       </div>
     </section>
-
-    <footer>
-      © <span id="year"></span> Mahindra — Built with HTML/CSS/JS.
-    </footer>
   </main>
 
-  <!-- MODAL -->
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Project detail">
-    <div class="modal-card">
-      <div class="modal-head">
-        <div>
-          <b id="mTitle">Judul</b><br/>
-          <small id="mSubtitle" style="color:var(--muted)">Kategori</small>
-        </div>
-        <button class="x" onclick="closeModal()" aria-label="Close">✕</button>
+  <footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">© <span id="year"></span> Mahindra Irvan Saputra</footer>
+
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[2rem] border border-white/10 bg-panel shadow-2xl">
+      <div class="flex items-start justify-between gap-4 border-b border-white/10 p-5 sm:p-6">
+        <div><p id="modalCategory" class="text-sm font-semibold uppercase tracking-widest text-cyan"></p><h2 id="modalTitle" class="mt-1 text-2xl font-bold"></h2></div>
+        <button id="closeModal" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/5 text-xl transition hover:border-cyan/40" aria-label="Tutup detail proyek">×</button>
       </div>
-      <div class="modal-body">
-        <div class="modal-grid">
-          <div class="modal-thumb" id="mThumb"></div>
-          <div>
-            <p id="mDesc" style="margin-top:0; color:var(--muted)"></p>
-
-            <div style="margin-top:10px">
-              <b>Tech Stack</b>
-              <div id="mStacks" class="meta"></div>
-            </div>
-
-            <div class="links">
-              <a class="btn" id="mLive" href="#" target="_blank" rel="noopener">Live Demo</a>
-              <a class="ghost" id="mRepo" href="#" target="_blank" rel="noopener">Source Code</a>
-            </div>
-            
-          </div>
-        </div>
+      <div class="grid gap-6 p-5 sm:p-6 md:grid-cols-[.9fr_1.1fr]">
+        <div id="modalVisual"></div>
+        <div><p id="modalDescription" class="leading-7 text-slate-300"></p><h3 class="mt-6 font-bold">Teknologi</h3><div id="modalStacks" class="mt-3 flex flex-wrap gap-2"></div><div id="modalLinks" class="mt-7 flex flex-wrap gap-3"></div></div>
       </div>
     </div>
   </div>
-
-  <script>
-    const projects = [
-      {
-        title: "ChatBot Filter Negative Word💬 (Study Case : Narendra Modi)",
-        category: "AI/ML | NLP ",
-        desc: "Membuat ChatBot Filter Negative Word untuk memfilter kata-kata negatif",
-        image : "img/1.png",
-        stacks: ["CHAT LLM", "FASTAPI", "DOCKER","STREAMLIT"],
-        repo: "https://github.com/zippo538/final_project"
-      },
-      {
-        title: "New York House Price Prediction🏠",
-        category: "AI/ML",
-        desc: "Memprediksi Harga Rumah di New York secara interaktif menggunakan Streamlit",
-        image : "img/2.png",
-        live : "https://www.linkedin.com/feed/update/urn:li:activity:7390809735198855169/?originTrackingId=6ashHSNFb5s%2FvP30GfFkDg%3D%3D",
-        stacks: ["ML/AI", "FAST API", "DOCKER", "STREAMLIT"],
-        repo: "https://github.com/zippo538/MlopsMahindraDay2"
-      },
-      {
-        title: "RAG-LLM-AI-SEJARAH-INDONESIA-MODERN📚",
-        category: "AI/ML",
-        desc: "Membuat ChatBot yang dapat Menanyakan secara spesifik Sejarah Indonesia Modern 1945-1990",
-        stacks: ["Langchain", "Qdrant", "Jupyter Notebook"],
-        image: "img/3.png",
-        repo: "https://github.com/zippo538/RAG-LLM-AI-SEJARAH-INDONESIA-MODERN"
-      },
-      {
-        title: "MyCuan💵",
-        category: "Website",
-        desc: "Membuat website untuk credit Peer to Peer menggunakan Stack Laravel dan Filament",
-        stacks: ["Laravel", "Filament", "Mysql"],
-        image : "img/4.png",
-        repo: "https://github.com/FinPro-ITPerbankan2023/FinPro-MyCuan"
-      },
-      {
-        title: "YOLO Detection Car🚗",
-        category: "Computer Vision",
-        desc: "Membuat deteksi mobil menggunakan Framework YOLO",
-        stacks: ["YOLO", "Python", "Jupyter Notebook"],
-        image : "img/5.png",
-        live : "img/detection_car.mp4",
-        repo: "https://github.com/FinPro-ITPerbankan2023/FinPro-MyCuan"
-      },
-      {
-        title: "Home Server💾",
-        category: "Network | Operating System",
-        desc: "Membuat Server rumah menggunakan open wrt dengan CPU arm64. Terinstall Zerotier,Docker dan Samba",
-        stacks: ["OPEN WRT", "Linux",],
-        image : "img/6.png",
-      },
-    ];
-
-    const grid = document.getElementById("projectGrid");
-    const modal = document.getElementById("modal");
-
-    function renderProjects(){
-      grid.innerHTML = "";
-      projects.forEach((p, idx) => {
-        const el = document.createElement("div");
-        el.className = "project";
-        el.tabIndex = 0;
-        el.innerHTML = `
-          <div class="thumb">
-            <span class="badge">${p.category}</span>
-            <img src="${p.image}" alt="${p.title}">
-          </div>
-          <h3>${p.title}</h3>
-          <p>${p.desc}</p>
-          <div class="meta">
-            ${p.stacks.slice(0,3).map(s => `<span class="chip">${s}</span>`).join("")}
-          </div>
-        `;
-        el.addEventListener("click", () => openModal(p));
-        el.addEventListener("keydown", (e) => { if(e.key === "Enter") openModal(p); });
-        grid.appendChild(el);
-      });
-    }
-
-    function openModal(p){
-      document.getElementById("mTitle").textContent = p.title;
-      document.getElementById("mSubtitle").textContent = p.category;
-      document.getElementById("mDesc").textContent = p.desc;
-
-      const thumb_img = document.getElementById("mThumb")
-      thumb_img.innerHTML= `<img src="${p.image}" alt="${p.title}">`;
-
-      const stacks = document.getElementById("mStacks");
-      stacks.innerHTML = p.stacks.map(s => `<span class="chip">${s}</span>`).join("");
-
-      const live = document.getElementById("mLive");
-      const repo = document.getElementById("mRepo");
-      live.href = p.live || "#";
-      repo.href = p.repo || "#";
-      live.style.display = p.live ? "inline-flex" : "none";
-      repo.style.display = p.repo ? "inline-flex" : "none";
-
-      modal.classList.add("show");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal(){
-      modal.classList.remove("show");
-      document.body.style.overflow = "";
-    }
-
-    modal.addEventListener("click", (e) => {
-      if(e.target === modal) closeModal();
-    });
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && modal.classList.contains("show")) closeModal();
-    });
-
-    function handleSubmit(e){
-      e.preventDefault();
-      alert("Pesan terkirim (demo). Hubungkan form ini ke backend / layanan form ya!");
-      e.target.reset();
-      return false;
-    }
-
-    // Footer and update
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("lastUpdated").textContent = new Date().toLocaleDateString("id-ID", {year:'numeric', month:'long', day:'numeric'});
-    renderProjects();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
