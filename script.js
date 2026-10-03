@@ -26,7 +26,7 @@ const projects = [
       "Permainan catur berbasis web dengan mesin permainan modular. Proyek menerapkan object-oriented programming, design patterns, penanganan error khusus, unit testing, validasi langkah, dan evaluasi status papan.",
     stacks: ["C#", "OOP", "Design Patterns", "Unit Testing", "Game Logic"],
     accent: "from-violet/30 via-fuchsia-400/10 to-transparent",
-    image: "img/img-lab-consumabletracker.png",
+    image: "img/img-chess-formulatrix.png",
     repo: "https://github.com/zippo538/ChessFormulatrix2",
   },
   {
