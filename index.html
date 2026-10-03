@@ -22,9 +22,107 @@
       }
     }
   </script>
+  <style>
+    #catLoader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(140, 124, 255, 0.18), transparent 34%),
+        radial-gradient(circle at 50% 62%, rgba(67, 232, 216, 0.11), transparent 38%),
+        #07111f;
+      transition: opacity 600ms ease, visibility 600ms ease;
+    }
+
+    #catLoader::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.45;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+
+    #catLoader.is-hidden {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .cat-loader-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: min(88vw, 360px);
+      color: #e2e8f0;
+      text-align: center;
+    }
+
+    #catCanvas {
+      width: 240px;
+      height: 240px;
+      filter: drop-shadow(0 24px 32px rgba(67, 232, 216, 0.14));
+    }
+
+    .cat-loader-title {
+      margin: -6px 0 6px;
+      font: 700 1rem/1.5 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    .cat-loader-label {
+      margin: 0;
+      color: #94a3b8;
+      font: 500 0.75rem/1.5 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .cat-loader-track {
+      width: 156px;
+      height: 3px;
+      margin-top: 18px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .cat-loader-track span {
+      display: block;
+      width: 42%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #8c7cff, #43e8d8);
+      animation: catLoaderProgress 1.1s ease-in-out infinite;
+    }
+
+    @keyframes catLoaderProgress {
+      from { transform: translateX(-115%); }
+      to { transform: translateX(355%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cat-loader-track span { animation-duration: 2.4s; }
+    }
+  </style>
 </head>
 
 <body class="min-h-screen overflow-x-hidden bg-ink text-slate-100 antialiased selection:bg-cyan/30">
+  <div id="catLoader" role="status" aria-live="polite" aria-label="Memuat portofolio">
+    <div class="cat-loader-content">
+      <div id="catCanvas" aria-hidden="true"></div>
+      <p class="cat-loader-title">Menyiapkan portofolio</p>
+      <p class="cat-loader-label">Please wait</p>
+      <div class="cat-loader-track" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+
   <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
     <div class="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-violet/20 blur-3xl"></div>
     <div class="absolute right-[-8rem] top-48 h-96 w-96 rounded-full bg-cyan/10 blur-3xl"></div>
@@ -125,6 +223,13 @@
       </div>
     </div>
   </div>
+  <script>
+    window.catLoaderFallback = window.setTimeout(() => {
+      document.getElementById('catLoader')?.classList.add('is-hidden');
+    }, 6000);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js"></script>
+  <script src="cat-loader.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
