@@ -145,13 +145,7 @@ document.addEventListener("keydown", (event) => {
     closeModal();
 });
 
-document.getElementById("contactForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const name = document.getElementById("contactName").value.trim();
-  const email = document.getElementById("contactEmail").value.trim();
-  const message = document.getElementById("contactMessage").value.trim();
-  window.location.href = `mailto:mahindra.irvan538@gmail.com?subject=${encodeURIComponent(`Portfolio inquiry dari ${name}`)}&body=${encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\n${message}`)}`;
-});
+
 
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastUpdated").textContent =
