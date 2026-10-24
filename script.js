@@ -17,6 +17,7 @@ const projects = [
     accent: "from-emerald-400/25 via-cyan-400/10 to-transparent",
     image: "img/img-lab-consumabletracker.png",
     repo: "https://github.com/zippo538/LabConsumeableTracker",
+    live: "https://labconsumable.portomahindra.my.id/",
   },
   {
     title: "Web-Based Chess Game",
