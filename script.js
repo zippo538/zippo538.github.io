@@ -29,6 +29,7 @@ const projects = [
     accent: "from-violet/30 via-fuchsia-400/10 to-transparent",
     image: "img/img-chess-formulatrix.png",
     repo: "https://github.com/zippo538/ChessFormulatrix2",
+    live: "https://chess.portomahindra.my.id/",
   },
   {
     title: "NLP Chatbot with Negative Word Filtering",
